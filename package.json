@@ -1,0 +1,23 @@
+{
+  "name": "amber",
+  "version": "0.1.0",
+  "description": "software 3d renderer written in TypeScript",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p ."
+  },
+  "author": "BlackSpotBear",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@types/gl-matrix": "^2.3.2",
+    "typescript": "^2.6.1"
+  },
+  "dependencies": {
+    "gl-matrix": "^2.4.0"
+  }
+}

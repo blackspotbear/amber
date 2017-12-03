@@ -1,0 +1,222 @@
+{
+	"width": 512,
+	"height": 512,
+	"fps": 30,
+	"main": "./script/main.js",
+	"assets": {
+		"main": {
+			"type": "script",
+			"path": "script/main.js",
+			"global": true
+		},
+		"plane": {
+			"type": "text",
+			"path": "text/plane.json"
+		},
+		"world": {
+			"type": "text",
+			"path": "text/world.json"
+		},
+		"a3dindex": {
+			"type": "script",
+			"path": "script/a3d/index.js",
+			"global": true
+		},
+		"A3DFrameBuffer": {
+			"type": "script",
+			"path": "script/a3d/FrameBuffer.js",
+			"global": true
+		},
+		"pizzaTxt": {
+			"type": "image",
+			"width": 256,
+			"height": 256,
+			"path": "image/pizzaTxt.png"
+		},
+		"pizza": {
+			"type": "text",
+			"path": "text/pizza.obj"
+		},
+		"rect": {
+			"type": "text",
+			"path": "text/rect.obj"
+		},
+		"baconTxt": {
+			"type": "image",
+			"width": 2048,
+			"height": 2048,
+			"path": "image/baconTxt.png"
+		},
+		"crackerTxt": {
+			"type": "image",
+			"width": 2048,
+			"height": 2048,
+			"path": "image/crackerTxt.png"
+		},
+		"bacon": {
+			"type": "text",
+			"path": "text/bacon.obj"
+		},
+		"cracker": {
+			"type": "text",
+			"path": "text/cracker.obj"
+		},
+		"Ice_Cream_01": {
+			"type": "text",
+			"path": "text/Ice_Cream_01.obj"
+		},
+		"Ice_Cream_01_mtl": {
+			"type": "text",
+			"path": "text/Ice_Cream_01_mtl.mtl"
+		},
+		"bacon_mtl": {
+			"type": "text",
+			"path": "text/bacon_mtl.mtl"
+		},
+		"cracker_mtl": {
+			"type": "text",
+			"path": "text/cracker_mtl.mtl"
+		},
+		"pizza_mtl": {
+			"type": "text",
+			"path": "text/pizza_mtl.mtl"
+		},
+		"CliffSwallow_BaseColor": {
+			"type": "image",
+			"width": 2048,
+			"height": 2048,
+			"path": "image/CliffSwallow_BaseColor.png"
+		},
+		"Hippopotamus_BaseColor": {
+			"type": "image",
+			"width": 2048,
+			"height": 2048,
+			"path": "image/Hippopotamus_BaseColor.png"
+		},
+		"Airplane_01": {
+			"type": "text",
+			"path": "text/Airplane_01.obj"
+		},
+		"Airplane_01_mtl": {
+			"type": "text",
+			"path": "text/Airplane_01_mtl.mtl"
+		},
+		"Chicken_01": {
+			"type": "text",
+			"path": "text/Chicken_01.obj"
+		},
+		"Chicken_01_mtl": {
+			"type": "text",
+			"path": "text/Chicken_01_mtl.mtl"
+		},
+		"CliffSwallow": {
+			"type": "text",
+			"path": "text/CliffSwallow.obj"
+		},
+		"CliffSwallow_mtl": {
+			"type": "text",
+			"path": "text/CliffSwallow_mtl.mtl"
+		},
+		"Dolphin_01": {
+			"type": "text",
+			"path": "text/Dolphin_01.obj"
+		},
+		"Dolphin_01_mtl": {
+			"type": "text",
+			"path": "text/Dolphin_01_mtl.mtl"
+		},
+		"Hippopotamus": {
+			"type": "text",
+			"path": "text/Hippopotamus.obj"
+		},
+		"Hippopotamus_mtl": {
+			"type": "text",
+			"path": "text/Hippopotamus_mtl.mtl"
+		},
+		"Kangaroo_01": {
+			"type": "text",
+			"path": "text/Kangaroo_01.obj"
+		},
+		"Kangaroo_01_mtl": {
+			"type": "text",
+			"path": "text/Kangaroo_01_mtl.mtl"
+		},
+		"Lobster_01": {
+			"type": "text",
+			"path": "text/Lobster_01.obj"
+		},
+		"Lobster_01_mtl": {
+			"type": "text",
+			"path": "text/Lobster_01_mtl.mtl"
+		},
+		"RocketShip_1393": {
+			"type": "text",
+			"path": "text/RocketShip_1393.obj"
+		},
+		"RocketShip_1393_mtl": {
+			"type": "text",
+			"path": "text/RocketShip_1393_mtl.mtl"
+		},
+		"Tugboat_1362": {
+			"type": "text",
+			"path": "text/Tugboat_1362.obj"
+		},
+		"Tugboat_1362_mtl": {
+			"type": "text",
+			"path": "text/Tugboat_1362_mtl.mtl"
+		},
+		"duck": {
+			"type": "text",
+			"path": "text/duck.obj"
+		},
+		"duck_mtl": {
+			"type": "text",
+			"path": "text/duck_mtl.mtl"
+		},
+		"AirPlaneView": {
+			"type": "script",
+			"path": "script/view/AirPlaneView.js",
+			"global": true
+		},
+		"PolyView": {
+			"type": "script",
+			"path": "script/view/PolyView.js",
+			"global": true
+		},
+		"View": {
+			"type": "script",
+			"path": "script/view/View.js",
+			"global": true
+		},
+		"viewindex": {
+			"type": "script",
+			"path": "script/view/index.js",
+			"global": true
+		}
+	},
+	"globalScripts": [
+		"node_modules/gl-matrix/dist/gl-matrix.js",
+		"node_modules/gl-matrix/package.json",
+		"node_modules/amber/lib/AABBox.js",
+		"node_modules/amber/lib/Color.js",
+		"node_modules/amber/lib/FlatShader.js",
+		"node_modules/amber/lib/FrameBuffer.js",
+		"node_modules/amber/lib/Geometry.js",
+		"node_modules/amber/lib/JsonLoader.js",
+		"node_modules/amber/lib/Material.js",
+		"node_modules/amber/lib/MatrixStack.js",
+		"node_modules/amber/lib/Model.js",
+		"node_modules/amber/lib/Node.js",
+		"node_modules/amber/lib/ObjLoader.js",
+		"node_modules/amber/lib/Renderer.js",
+		"node_modules/amber/lib/Shader.js",
+		"node_modules/amber/lib/Texture.js",
+		"node_modules/amber/lib/Traverser.js",
+		"node_modules/amber/lib/Utils.js",
+		"node_modules/amber/lib/Vertex.js",
+		"node_modules/amber/lib/math/index.js",
+		"node_modules/amber/lib/index.js",
+		"node_modules/amber/lib/internal/common.js",
+		"node_modules/amber/package.json"
+	]
+}

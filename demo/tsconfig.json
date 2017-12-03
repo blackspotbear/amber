@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "noLib": false,
+    "noImplicitAny": false,
+    "module": "commonjs" ,
+    "outDir": "./game/script"
+  },
+  "files": [
+    "node_modules/@akashic/akashic-engine/lib/main.d.ts",
+    "typings/index.d.ts",
+    "src/main.ts"
+  ],
+  "include": [
+    "src/a3d/**/*.ts"
+  ]
+}

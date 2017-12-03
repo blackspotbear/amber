@@ -1,0 +1,34 @@
+{
+  "name": "amber-demo",
+  "version": "0.1.0",
+  "description": "demo for amber",
+  "scripts": {
+    "prepublish": "npm run install:typings",
+    "build": "gulp build && cd game && akashic scan asset script",
+    "install:typings": "typings install",
+    "lint": "gulp lint",
+    "start": "akashic-sandbox game",
+    "test": "gulp test lint"
+  },
+  "author": "BlackSpotBear",
+  "license": "MIT",
+  "devDependencies": {
+    "@akashic/akashic-cli": "1.1.4",
+    "@akashic/akashic-engine": "~1.12.3",
+    "@akashic/akashic-sandbox": "^0.12.5",
+    "del": "^1.1.1",
+    "gulp": "~3.9.1",
+    "gulp-istanbul": "~0.10.4",
+    "gulp-jasmine": "~2.3.0",
+    "gulp-shell": "~0.5.2",
+    "gulp-tslint": "4.3.5",
+    "gulp-util": "^3.0.7",
+    "jasmine": "~2.1.1",
+    "jasmine-reporters": "~2.0.4",
+    "jasmine-terminal-reporter": "~0.9.1",
+    "tslint": "^3.10.2",
+    "typescript": "^2.6.1",
+    "typings": "1.0.4"
+  },
+  "dependencies": {}
+}
