@@ -33,7 +33,7 @@ export class PolyView implements View {
 	}
 
 	update(): boolean {
-		(<any>glm.quat).fromEuler(this.root.rot, 0, this.cntr / g.game.fps * 30, 0);
+		glm.quat.fromEuler(this.root.rot, 0, this.cntr / g.game.fps * 30, 0);
 		return this.willExit;
 	}
 

@@ -59,7 +59,7 @@ function main(param: g.GameMainParameterObject): void {
 			abr.loadSceneGraphFromObj((scene.assets["Tugboat_1362"] as g.TextAsset).data, resource)
 		];
 		const airPlaneModel = abr.loadSceneGraphFromJSON((scene.assets["plane"] as g.TextAsset).data);
-		(<any>(glm.quat)).fromEuler(airPlaneModel.rot, 0, 90, 90);
+		glm.quat.fromEuler(airPlaneModel.rot, 0, 90, 90);
 		const worldModel = abr.loadSceneGraphFromJSON((scene.assets["world"] as g.TextAsset).data);
 
 		const pixelSize = 4;
