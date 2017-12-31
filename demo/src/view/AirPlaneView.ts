@@ -45,14 +45,14 @@ export class AirPlaneView implements View {
 		this.airPlane.pos[1] = -2 + (Math.sin(Math.PI * this.cntr / (g.game.fps * 1)) + 1) * 5;
 
 		const deg = (this.cntr / dur) * 360;
-		(<any>glm.quat).fromEuler(this.airPlane.rot, deg, deg, deg);
+		glm.quat.fromEuler(this.airPlane.rot, deg, deg, deg);
 
 
-		(<any>(glm.quat)).fromEuler(this.world.rot, 0, 90, 90);
+		glm.quat.fromEuler(this.world.rot, 0, 90, 90);
 		glm.quat.mul(
 			this.world.rot,
-			(<any>(glm.quat)).fromEuler(glm.quat.create(), 0, -deg / 2, 0),
-			(<any>(glm.quat)).fromEuler(glm.quat.create(), 0, 90, 90)
+			glm.quat.fromEuler(glm.quat.create(), 0, -deg / 2, 0),
+			glm.quat.fromEuler(glm.quat.create(), 0, 90, 90)
 		);
 
 		return this.willExit;
