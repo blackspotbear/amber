@@ -1,8 +1,8 @@
 {
-  "name": "typescript-game-sample",
+  "name": "amber-demo",
   "private": true,
   "version": "0.1.0",
-  "description": "",
+  "description": "demo for amber",
   "main": "./script/main.js",
   "scripts": {
     "build": "rimraf ./script && tsc && akashic-cli-scan asset script",
@@ -13,8 +13,8 @@
     "export-html": "rimraf game && akashic-cli-export-html -o game",
     "test": "istanbul cover --report text --report html --colors ./node_modules/jasmine/bin/jasmine.js"
   },
-  "author": "",
-  "license": "",
+  "author": "BlackSpotBear",
+  "license": "MIT",
   "devDependencies": {
     "@akashic/akashic-cli-export-html": "^0.2.6",
     "@akashic/akashic-cli-export-zip": "^0.3.2",
