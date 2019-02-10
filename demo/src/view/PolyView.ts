@@ -102,4 +102,3 @@ export class PolyView implements View {
 		glm.mat4.lookAt(cam, this.pos, this.center, this.up);
 	}
 }
-

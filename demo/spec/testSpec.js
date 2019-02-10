@@ -1,14 +1,14 @@
 // NOTE: スクリプトアセットとして実行される環境をエミュレーションするためにglobal.gを生成する
 global.g = require("@akashic/akashic-engine");
 
-describe("mainScene", function() {
-	beforeEach(function() {
+describe("mainScene", () => {
+	beforeEach(() => {
 	});
 
-	afterEach(function() {
+	afterEach(() => {
 	});
 
-	it("example", function() {
-		expect(g).not.toBe(undefined);
+	it("example", () => {
+		expect(g).not.toBeUndefined();
 	});
 });

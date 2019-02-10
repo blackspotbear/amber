@@ -47,7 +47,6 @@ export class AirPlaneView implements View {
 		const deg = (this.cntr / dur) * 360;
 		glm.quat.fromEuler(this.airPlane.rot, deg, deg, deg);
 
-
 		glm.quat.fromEuler(this.world.rot, 0, 90, 90);
 		glm.quat.mul(
 			this.world.rot,

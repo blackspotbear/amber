@@ -3,6 +3,9 @@ import * as abr from "amber";
 import * as a3d from "./a3d";
 import * as view from "./view";
 
+// TODO: remove
+declare var document: any;
+
 function main(param: g.GameMainParameterObject): void {
 	const scene = new g.Scene({game: g.game, assetIds: [
 		// Obj, Material, Texture
@@ -27,7 +30,7 @@ function main(param: g.GameMainParameterObject): void {
 		"world"
 	]});
 
-	scene.loaded.handle(() => {
+	scene.loaded.add(() => {
 		const resource: abr.ObjResource = {
 			getMaterialText: (name: string) => (scene.assets[name.replace(/\./g, "_")] as g.TextAsset).data,
 			getTextureData: (name: string) => {
@@ -79,14 +82,14 @@ function main(param: g.GameMainParameterObject): void {
 		let viewIdx = 0;
 		const views: view.View[] = [
 			new view.AirPlaneView(airPlaneModel, worldModel),
-			new view.PolyView(targetModels),
+			new view.PolyView(targetModels)
 		];
 
-		scene.pointDownCapture.handle((e: g.PointDownEvent) => views[viewIdx].onPointDown(e.point));
-		scene.pointUpCapture.handle((e: g.PointUpEvent) => views[viewIdx].onPointUp(e.point));
-		scene.pointMoveCapture.handle((e: g.PointMoveEvent) => views[viewIdx].onPointMove(e.point));
+		scene.pointDownCapture.add((e: g.PointDownEvent) => views[viewIdx].onPointDown(e.point));
+		scene.pointUpCapture.add((e: g.PointUpEvent) => views[viewIdx].onPointUp(e.point));
+		scene.pointMoveCapture.add((e: g.PointMoveEvent) => views[viewIdx].onPointMove(e.point));
 
-		scene.update.handle(() => {
+		scene.update.add(() => {
 			const aView = views[viewIdx];
 
 			const exit = aView.update();

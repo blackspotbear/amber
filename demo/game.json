@@ -195,8 +195,6 @@
 		}
 	},
 	"globalScripts": [
-		"node_modules/gl-matrix/dist/gl-matrix.js",
-		"node_modules/gl-matrix/package.json",
 		"node_modules/amber/lib/AABBox.js",
 		"node_modules/amber/lib/Color.js",
 		"node_modules/amber/lib/FlatShader.js",
@@ -217,6 +215,23 @@
 		"node_modules/amber/lib/math/index.js",
 		"node_modules/amber/lib/index.js",
 		"node_modules/amber/lib/internal/common.js",
-		"node_modules/amber/package.json"
-	]
+		"node_modules/gl-matrix/cjs/common.js",
+		"node_modules/gl-matrix/cjs/index.js",
+		"node_modules/gl-matrix/cjs/mat2.js",
+		"node_modules/gl-matrix/cjs/mat2d.js",
+		"node_modules/gl-matrix/cjs/mat3.js",
+		"node_modules/gl-matrix/cjs/mat4.js",
+		"node_modules/gl-matrix/cjs/quat.js",
+		"node_modules/gl-matrix/cjs/quat2.js",
+		"node_modules/gl-matrix/cjs/vec2.js",
+		"node_modules/gl-matrix/cjs/vec3.js",
+		"node_modules/gl-matrix/cjs/vec4.js"
+	],
+	"environment": {
+		"sandbox-runtime": "2"
+	},
+	"moduleMainScripts": {
+		"amber": "node_modules/amber/lib/index.js",
+		"gl-matrix": "node_modules/gl-matrix/cjs/index.js"
+	}
 }
