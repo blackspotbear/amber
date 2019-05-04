@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.3
+
+* Fix Y inversed texture.
+
 ## v0.1.2
 
 * Remove security vulnerability.
