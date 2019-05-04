@@ -3,9 +3,6 @@ import * as abr from "amber";
 import * as a3d from "./a3d";
 import * as view from "./view";
 
-// TODO: remove
-declare var document: any;
-
 function main(param: g.GameMainParameterObject): void {
 	const scene = new g.Scene({game: g.game, assetIds: [
 		// Obj, Material, Texture
@@ -34,15 +31,16 @@ function main(param: g.GameMainParameterObject): void {
 		const resource: abr.ObjResource = {
 			getMaterialText: (name: string) => (scene.assets[name.replace(/\./g, "_")] as g.TextAsset).data,
 			getTextureData: (name: string) => {
-				const img = (scene.assets[name.match(/(.*)(?:\.([^.]+$))/)[1]] as g.ImageAsset).asSurface()._drawable;
-				const canvas = document.createElement("canvas");
-				const context = canvas.getContext("2d");
-				canvas.width = img.width;
-				canvas.height = img.height;
-				context.translate(0, img.height);
-				context.scale(1, -1);
-				context.drawImage(img, 0, 0);
-				const imageData = context.getImageData(0, 0, img.width, img.height);
+				const imageAsset = scene.assets[name.match(/(.*)(?:\.([^.]+$))/)[1]] as g.ImageAsset;
+
+				const surface = g.game.resourceFactory.createSurface(imageAsset.width, imageAsset.height);
+				// tslint:disable-next-line:no-shadowed-variable
+				const renderer = surface.renderer();
+				renderer.begin();
+				renderer.drawImage(imageAsset.asSurface(), 0, 0, imageAsset.width, imageAsset.height, 0, 0);
+				renderer.end();
+
+				const imageData = renderer._getImageData(0, 0, imageAsset.width, imageAsset.height);
 				return { rgba: imageData.data, width: imageData.width, height: imageData.height };
 			}
 		};

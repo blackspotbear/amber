@@ -1,7 +1,7 @@
 {
   "name": "amber-demo",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "demo for amber",
   "main": "./script/main.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "@akashic/akashic-cli-export-html": "^0.2.6",
     "@akashic/akashic-cli-export-zip": "^0.3.2",
     "@akashic/akashic-cli-scan": "~0.2.1",
-    "@akashic/akashic-engine": "~2.0.3",
+    "@akashic/akashic-engine": "~2.4.14",
     "@akashic/akashic-sandbox": "~0.13.11",
     "istanbul": "~0.4.5",
     "jasmine": "~2.8.0",
