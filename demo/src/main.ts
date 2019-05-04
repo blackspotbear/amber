@@ -37,6 +37,7 @@ function main(param: g.GameMainParameterObject): void {
 				// tslint:disable-next-line:no-shadowed-variable
 				const renderer = surface.renderer();
 				renderer.begin();
+				renderer.transform([1, 0, 0, -1, 0, imageAsset.height]);
 				renderer.drawImage(imageAsset.asSurface(), 0, 0, imageAsset.width, imageAsset.height, 0, 0);
 				renderer.end();
 
