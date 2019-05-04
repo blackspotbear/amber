@@ -4,6 +4,10 @@
 
 Amber is a tiny software 3d renderer written in TypeScript.
 
+![Flight](./flight.png "Flight")
+![Rocket](./rocket.png "Rocket")
+![Bird](./bird.png "Bird")
+
 ## Support
 
 * Programmable shader
