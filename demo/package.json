@@ -18,7 +18,7 @@
   "devDependencies": {
     "@akashic/akashic-cli-export-html": "^0.2.19",
     "@akashic/akashic-cli-export-zip": "^0.3.10",
-    "@akashic/akashic-cli-scan": "~0.2.1",
+    "@akashic/akashic-cli-scan": "^0.2.12",
     "@akashic/akashic-engine": "~2.4.14",
     "@akashic/akashic-sandbox": "^0.13.61",
     "istanbul": "~0.4.5",
