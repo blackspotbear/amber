@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v0.1.1
+
+* Bump demo's Akashic Engine version to 2.4.14.
+* Remove dependency on document object from demo.
+
 ## v0.1.0
 
 * first release

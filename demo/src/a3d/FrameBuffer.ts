@@ -1,5 +1,11 @@
 import * as abr from "amber";
 
+// TODO: remove
+declare var document: any;
+type ImageData = any;
+type HTMLCanvasElement = any;
+type CanvasRenderingContext2D = any;
+
 function colorBuffer2ImageData(colorBuffer: number[], imageData: ImageData): void {
 	const data = imageData.data;
 

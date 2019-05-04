@@ -8,4 +8,3 @@ export interface View {
 	onPointDown(pos: g.CommonOffset): void;
 	onPointMove(pos: g.CommonOffset): void;
 }
-

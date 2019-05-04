@@ -27,19 +27,20 @@ function main(param: g.GameMainParameterObject): void {
 		"world"
 	]});
 
-	scene.loaded.handle(() => {
+	scene.loaded.add(() => {
 		const resource: abr.ObjResource = {
 			getMaterialText: (name: string) => (scene.assets[name.replace(/\./g, "_")] as g.TextAsset).data,
 			getTextureData: (name: string) => {
-				const img = (scene.assets[name.match(/(.*)(?:\.([^.]+$))/)[1]] as g.ImageAsset).asSurface()._drawable;
-				const canvas = document.createElement("canvas");
-				const context = canvas.getContext("2d");
-				canvas.width = img.width;
-				canvas.height = img.height;
-				context.translate(0, img.height);
-				context.scale(1, -1);
-				context.drawImage(img, 0, 0);
-				const imageData = context.getImageData(0, 0, img.width, img.height);
+				const imageAsset = scene.assets[name.match(/(.*)(?:\.([^.]+$))/)[1]] as g.ImageAsset;
+
+				const surface = g.game.resourceFactory.createSurface(imageAsset.width, imageAsset.height);
+				// tslint:disable-next-line:no-shadowed-variable
+				const renderer = surface.renderer();
+				renderer.begin();
+				renderer.drawImage(imageAsset.asSurface(), 0, 0, imageAsset.width, imageAsset.height, 0, 0);
+				renderer.end();
+
+				const imageData = renderer._getImageData(0, 0, imageAsset.width, imageAsset.height);
 				return { rgba: imageData.data, width: imageData.width, height: imageData.height };
 			}
 		};
@@ -79,14 +80,14 @@ function main(param: g.GameMainParameterObject): void {
 		let viewIdx = 0;
 		const views: view.View[] = [
 			new view.AirPlaneView(airPlaneModel, worldModel),
-			new view.PolyView(targetModels),
+			new view.PolyView(targetModels)
 		];
 
-		scene.pointDownCapture.handle((e: g.PointDownEvent) => views[viewIdx].onPointDown(e.point));
-		scene.pointUpCapture.handle((e: g.PointUpEvent) => views[viewIdx].onPointUp(e.point));
-		scene.pointMoveCapture.handle((e: g.PointMoveEvent) => views[viewIdx].onPointMove(e.point));
+		scene.pointDownCapture.add((e: g.PointDownEvent) => views[viewIdx].onPointDown(e.point));
+		scene.pointUpCapture.add((e: g.PointUpEvent) => views[viewIdx].onPointUp(e.point));
+		scene.pointMoveCapture.add((e: g.PointMoveEvent) => views[viewIdx].onPointMove(e.point));
 
-		scene.update.handle(() => {
+		scene.update.add(() => {
 			const aView = views[viewIdx];
 
 			const exit = aView.update();

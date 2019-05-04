@@ -29,10 +29,6 @@ cd demo
 npm install
 npm link amber
 npm run build
-cd game
-npm install
-npm link amber
-cd ..
 npm start # open http://localhost:3000/game/
 ```
 

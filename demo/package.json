@@ -1,34 +1,33 @@
 {
   "name": "amber-demo",
-  "version": "0.1.0",
+  "private": true,
+  "version": "0.2.0",
   "description": "demo for amber",
+  "main": "./script/main.js",
   "scripts": {
-    "prepublish": "npm run install:typings",
-    "build": "gulp build && cd game && akashic scan asset script",
-    "install:typings": "typings install",
-    "lint": "gulp lint",
-    "start": "akashic-sandbox game",
-    "test": "gulp test lint"
+    "build": "rimraf ./script && tsc && akashic-cli-scan asset script",
+    "update": "akashic-cli-scan asset && akashic-cli-scan globalScripts",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "akashic-sandbox .",
+    "export-zip": "rimraf game.zip && akashic-cli-export-zip -o game.zip -s",
+    "export-html": "rimraf game && akashic-cli-export-html -o game",
+    "test": "istanbul cover --report text --report html --colors ./node_modules/jasmine/bin/jasmine.js"
   },
   "author": "BlackSpotBear",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/akashic-cli": "1.1.4",
-    "@akashic/akashic-engine": "~1.12.3",
-    "@akashic/akashic-sandbox": "^0.12.5",
-    "del": "^1.1.1",
-    "gulp": "~3.9.1",
-    "gulp-istanbul": "~0.10.4",
-    "gulp-jasmine": "~2.3.0",
-    "gulp-shell": "~0.5.2",
-    "gulp-tslint": "4.3.5",
-    "gulp-util": "^3.0.7",
-    "jasmine": "~2.1.1",
-    "jasmine-reporters": "~2.0.4",
-    "jasmine-terminal-reporter": "~0.9.1",
-    "tslint": "^3.10.2",
-    "typescript": "^2.6.1",
-    "typings": "1.0.4"
+    "@akashic/akashic-cli-export-html": "^0.2.6",
+    "@akashic/akashic-cli-export-zip": "^0.3.2",
+    "@akashic/akashic-cli-scan": "~0.2.1",
+    "@akashic/akashic-engine": "~2.4.14",
+    "@akashic/akashic-sandbox": "~0.13.11",
+    "istanbul": "~0.4.5",
+    "jasmine": "~2.8.0",
+    "rimraf": "~2.6.2",
+    "tslint": "~5.8.0",
+    "typescript": "~2.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gl-matrix": "^3.0.0"
+  }
 }
