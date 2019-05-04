@@ -1,6 +1,6 @@
 {
   "name": "amber",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "software 3d renderer written in TypeScript",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
