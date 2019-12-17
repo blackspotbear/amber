@@ -5,8 +5,10 @@
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
+    "build": "tsc -p .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "BlackSpotBear",
   "license": "MIT",
