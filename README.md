@@ -19,9 +19,7 @@ Amber is a tiny software 3d renderer written in TypeScript.
 ## How to build
 
 ```sh
-npm install
-npm run build
-npm link # to be linked by demo later
+npm install blackspotbear/amber
 ```
 
 ## How to run demo
@@ -31,7 +29,6 @@ The demo is made with [Akashic Engine](https://github.com/akashic-games/akashic-
 ```sh
 cd demo
 npm install
-npm link amber
 npm run build
 npm start # open http://localhost:3000/game/
 ```
