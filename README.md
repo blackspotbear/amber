@@ -16,7 +16,7 @@ Amber is a tiny software 3d renderer written in TypeScript.
 * Scene Graph
 * Culling with AABB
 
-## How to build
+## How to install
 
 ```sh
 npm install blackspotbear/amber

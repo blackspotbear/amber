@@ -3,6 +3,7 @@
 ## Unreleased changes
 
 - Simplify install / build process.
+- Resolve vulnerabilities.
 
 ## v0.1.3
 
