@@ -12,7 +12,7 @@
     "start": "akashic-sandbox .",
     "export-zip": "rimraf game.zip && akashic-cli-export-zip -o game.zip -s",
     "export-html": "rimraf game && akashic-cli-export-html -o game",
-    "test": "istanbul cover --report text --report html --colors ./node_modules/jasmine/bin/jasmine.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "BlackSpotBear",
   "license": "MIT",
@@ -22,9 +22,7 @@
     "@akashic/akashic-cli-scan": "^0.2.12",
     "@akashic/akashic-engine": "~2.4.14",
     "@akashic/akashic-sandbox": "^0.13.61",
-    "istanbul": "~0.4.5",
-    "jasmine": "~2.8.0",
-    "rimraf": "~2.6.2",
+    "rimraf": "^3.0.0",
     "tslint": "~5.8.0",
     "typescript": "~2.6.2"
   },
