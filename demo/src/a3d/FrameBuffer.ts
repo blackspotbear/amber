@@ -1,12 +1,6 @@
 import * as abr from "amber";
 
-// TODO: remove
-declare var document: any;
-type ImageData = any;
-type HTMLCanvasElement = any;
-type CanvasRenderingContext2D = any;
-
-function colorBuffer2ImageData(colorBuffer: number[], imageData: ImageData): void {
+function colorBuffer2ImageData(colorBuffer: number[], imageData: g.ImageData): void {
 	const data = imageData.data;
 
 	let dsti = 0;
@@ -17,25 +11,6 @@ function colorBuffer2ImageData(colorBuffer: number[], imageData: ImageData): voi
 		data[dsti++] = (rgba >>  8) & 0xFF;
 		data[dsti++] = (rgba >>  0) & 0xFF;
 	}
-}
-
-function drawCanvas(renderer: g.Renderer, srcCanvas: HTMLCanvasElement): void {
-	const ctx = (renderer as any).context as CanvasRenderingContext2D;
-	const dstCanvas = ctx.canvas;
-
-	const anyCtx = ctx as any;
-	anyCtx.mozImageSmoothingEnabled = false;
-	anyCtx.webkitImageSmoothingEnabled = false;
-	anyCtx.msImageSmoothingEnabled = false;
-	anyCtx.imageSmoothingEnabled = false;
-
-	ctx.drawImage(
-		srcCanvas,
-		0, 0,
-		srcCanvas.width, srcCanvas.height,
-		0, 0,
-		dstCanvas.width, dstCanvas.height
-	);
 }
 
 export interface FrameBufferParameterObject extends g.EParameterObject {
@@ -49,40 +24,39 @@ export class FrameBuffer extends g.E implements abr.FrameBuffer {
 	colorBuffer: number[]; // RGBA
 	zBuffer: number[];
 
-	canvas: HTMLCanvasElement;
-	ctx: CanvasRenderingContext2D;
-	imageData: ImageData;
+	backSurface: g.Surface;
+	imageData: g.ImageData;
 
 	constructor(param: FrameBufferParameterObject) {
 		super(param);
+
+		const width = (this.width / param.pixelSize) | 0;
+		const height = (this.width / param.pixelSize) | 0;
+
 		this.pixelSize = param.pixelSize;
-		this.resolution = {
-			width: (this.width / param.pixelSize) | 0,
-			height: (this.width / param.pixelSize) | 0
-		};
-
-		// back buffer
-		this.canvas = document.createElement("canvas");
-		this.canvas.width = this.resolution.width;
-		this.canvas.height = this.resolution.height;
-		this.ctx = this.canvas.getContext("2d");
-		this.imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
-
-		this.colorBuffer = new Array(this.resolution.width * this.resolution.height);
-		this.zBuffer = new Array(this.resolution.width * this.resolution.height);
+		this.resolution = { width, height };
+		this.backSurface = g.game.resourceFactory.createSurface(width, height);
+		this.imageData = this.backSurface.renderer()._getImageData(0, 0, width, height);
+		this.colorBuffer = new Array(width * height);
+		this.zBuffer = new Array(width * height);
 	}
 
 	renderSelf(renderer: g.Renderer, camera?: g.Camera): boolean {
+		this.updateBackSurface();
 
-		this.ctx.save();
-		colorBuffer2ImageData(this.colorBuffer, this.imageData);
-		this.ctx.putImageData(this.imageData, 0, 0);
-		this.ctx.restore();
+		const sx = g.game.width / this.backSurface.width;
+		const sy = g.game.height / this.backSurface.height;
 
 		renderer.save();
-		drawCanvas(renderer, this.canvas);
+		renderer.transform([sx, 0, 0, sy, 0, 0]);
+		renderer.drawImage(this.backSurface, 0, 0, this.backSurface.width, this.backSurface.height, 0, 0);
 		renderer.restore();
 
 		return true;
+	}
+
+	private updateBackSurface(): void {
+		colorBuffer2ImageData(this.colorBuffer, this.imageData);
+		this.backSurface.renderer()._putImageData(this.imageData, 0, 0);
 	}
 }
