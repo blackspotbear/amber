@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased changes
+## v0.1.4
 
 - Simplify install / build process.
 - Resolve vulnerabilities.
