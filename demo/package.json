@@ -23,7 +23,7 @@
     "@akashic/akashic-engine": "^2.6.1",
     "@akashic/akashic-sandbox": "^0.15.22",
     "rimraf": "^3.0.0",
-    "tslint": "~5.8.0",
+    "tslint": "^6.1.1",
     "typescript": "~2.6.2"
   },
   "dependencies": {
