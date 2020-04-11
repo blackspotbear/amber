@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Unreleased changes
+
+- Update demo's tslint.
+
 ## v0.1.4
 
 - Simplify install / build process.
