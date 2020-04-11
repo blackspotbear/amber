@@ -17,14 +17,14 @@
   "author": "BlackSpotBear",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/akashic-cli-export-html": "^0.2.49",
-    "@akashic/akashic-cli-export-zip": "^0.3.27",
-    "@akashic/akashic-cli-scan": "^0.2.12",
+    "@akashic/akashic-cli-export-html": "^0.7.4",
+    "@akashic/akashic-cli-export-zip": "^0.6.3",
+    "@akashic/akashic-cli-scan": "^0.5.2",
     "@akashic/akashic-engine": "^2.6.1",
-    "@akashic/akashic-sandbox": "^0.15.22",
+    "@akashic/akashic-sandbox": "^0.16.3",
     "rimraf": "^3.0.0",
     "tslint": "^6.1.1",
-    "typescript": "~2.6.2"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "gl-matrix": "^3.0.0"

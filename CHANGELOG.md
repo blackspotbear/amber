@@ -2,7 +2,7 @@
 
 ## Unreleased changes
 
-- Update demo's tslint and exporters.
+- Update demo's dependencies.
 
 ## v0.1.4
 
