@@ -17,8 +17,8 @@
   "author": "BlackSpotBear",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/akashic-cli-export-html": "^0.2.19",
-    "@akashic/akashic-cli-export-zip": "^0.3.10",
+    "@akashic/akashic-cli-export-html": "^0.2.49",
+    "@akashic/akashic-cli-export-zip": "^0.3.27",
     "@akashic/akashic-cli-scan": "^0.2.12",
     "@akashic/akashic-engine": "^2.6.1",
     "@akashic/akashic-sandbox": "^0.15.22",
