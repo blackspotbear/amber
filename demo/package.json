@@ -17,11 +17,11 @@
   "author": "BlackSpotBear",
   "license": "MIT",
   "devDependencies": {
-    "@akashic/akashic-cli-export-html": "^0.7.4",
-    "@akashic/akashic-cli-export-zip": "^0.6.3",
-    "@akashic/akashic-cli-scan": "^0.5.2",
-    "@akashic/akashic-engine": "^2.6.1",
-    "@akashic/akashic-sandbox": "^0.16.3",
+    "@akashic/akashic-cli-export-html": "^0.7.63",
+    "@akashic/akashic-cli-export-zip": "^0.6.48",
+    "@akashic/akashic-cli-scan": "^0.5.43",
+    "@akashic/akashic-engine": "^2.6.5",
+    "@akashic/akashic-sandbox": "^0.16.19",
     "rimraf": "^3.0.0",
     "tslint": "^6.1.1",
     "typescript": "^3.8.3"
